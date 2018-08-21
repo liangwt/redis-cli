@@ -19,12 +19,12 @@ var (
 // Client 客户端结构体
 type Client struct {
 	host string
-	port string
+	port int
 	conn *net.TCPConn
 }
 
 // NewClient 新创建一个客户端
-func NewClient(h, p string) *Client {
+func NewClient(h string, p int) *Client {
 	return &Client{
 		host: h,
 		port: p,
@@ -33,10 +33,8 @@ func NewClient(h, p string) *Client {
 
 // Connect 连接到redis
 func (c *Client) Connect() error {
-	tcpAddr, err := net.ResolveTCPAddr("tcp", net.JoinHostPort(c.host, c.port))
-	if err != nil {
-		return err
-	}
+	var err error
+	tcpAddr := &net.TCPAddr{IP: net.ParseIP(c.host), Port: c.port}
 	c.conn, err = net.DialTCP("tcp", nil, tcpAddr)
 	if err != nil {
 		return err
