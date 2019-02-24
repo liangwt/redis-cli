@@ -25,3 +25,9 @@ or with linux
 git clone git@github.com:liangwt/redis-cli.git
 ./redis-cli/build/linux_amd64/redis-cli
 ```
+
+### Read More
+
+- My article: [redis client implemention](https://blog.showthink.cn/2018/10/08/redis_cli/)
+- My blog: [showthink](https://blog.showthink.cn)
+- Follow me: [@不会凉的凉凉](https://www.weibo.com/u/3010707603)
