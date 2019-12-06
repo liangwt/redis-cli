@@ -2,7 +2,7 @@
 
 ### Introduction
 
-A very very simaple redis-cli writen by golang
+A very very simple redis-cli written by golang
 
 ### Usages
 
